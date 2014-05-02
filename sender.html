@@ -46,15 +46,19 @@ limitations under the License.
     </style>
     <script type="text/javascript" src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
     <script type="text/javascript">
-        var applicationID = '794B7BBF';
-        var namespace = 'urn:x-cast:com.google.cast.sample.helloworld';
+        var applicationID = '748BE0DE';
+        var namespace = 'urn:x-cast:com.jukeit.sample';
         var session = null;
 
         /**
          * Call initialization for Cast
          */
-        if (!chrome.cast || !chrome.cast.isAvailable) {
-            setTimeout(initializeCastApi, 1000);
+        window['__onGCastApiAvailable'] = function(loaded, errorInfo) {
+            if (loaded) {
+                initializeCastApi();
+            } else {
+                console.log(errorInfo);
+            }
         }
 
         /**
