@@ -13,6 +13,9 @@ window['__onGCastApiAvailable'] = function(loaded, errorInfo) {
     console.log(errorInfo);
   }
 }
+if (!chrome.cast || !chrome.cast.isAvailable) {
+  setTimeout(initializeCastApi, 1000);
+}
 
 initializeCastApi = function() {
   console.log('initCastApi');
