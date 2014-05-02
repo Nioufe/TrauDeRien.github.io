@@ -6,6 +6,7 @@ var applicationID = '748BE0DE';
 var session;
 
 window['__onGCastApiAvailable'] = function(loaded, errorInfo) {
+  console.log('castApiAvailable');
   if (loaded) {
     initializeCastApi();
   } else {
