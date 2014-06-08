@@ -1,3 +1,7 @@
+body{
+    background: #FAFBFB;
+}
+
 .container-full {
     margin: 0 auto;
     overflow: hidden;
@@ -23,4 +27,18 @@
     color: #CC685B;
     padding: 15px;
 
+}
+h1{
+    position: relative;
+    white-space:nowrap;
+    left: 0px;
+}
+.titleContainer{
+    float:left;
+    margin-right:5px;
+    width: 100%;
+    font-size:200%;
+    line-height:30px;
+    overflow:hidden;
+    position: relative;
 }

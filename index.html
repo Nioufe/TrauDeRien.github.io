@@ -12,7 +12,9 @@
 <div class="container-full">
     <div class="row top">
         <div class="col-md-12">
-          Around The World - Daft Punk - Around The World Album
+          <div class="titleContainer">
+            <h1 class="titleH1"><span class="titleSpan">Around The World - Daft Punk - Around The World Album</span></h1>
+          </div>
         </div>
     </div>
     <div class="row">
@@ -74,7 +76,9 @@
     </div>
     <div class="row bottom">
         <div class="col-md-12">
-            Dedicace To Joris
+            <div class="titleContainer">
+                <h1 class="titleH1"><span class="titleSpan">Juke'It Best App Ever, So Much Fun, XOXO, Keur Keur, Such Love</span></h1>
+            </div>
         </div>
     </div>
 </div>
@@ -85,8 +89,35 @@
         var height = screen.height;
         var width = screen.width;
         $('.container-full').css('height', height);
+        $(function() {
+            var scroll_text;
+            var $elmt = $(this);
+            scroll_text = setInterval(function() {
+                scrollText($elmt);
+            }, 28);
+        }, function() {
+            clearInterval(scroll_text);
+            $(".titleH1", this).css({
+                left: 0
+            });
+        });
+
+        var scrollText = function($elmt) {
+            var h1 = $(".titleH1", $elmt),
+                    width = h1.width(),
+                    left = h1.position().left - 1,
+                    titleWidth = $('.titleSpan').width();
+            if(width<titleWidth){
+            left = -left > titleWidth ? width : left;
+                h1.css({
+                    left: left
+                });
+            }
+        };
+
        // $('.filler').css('height', height/4);
         $('.right,.left').css('height', 430);
+
         $('.futur').css('height',100);
         cast.receiver.logger.setLevelValue(0);
         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
