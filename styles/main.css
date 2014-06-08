@@ -10,7 +10,6 @@ body{
 
 .middle{
     text-align: center;
-    background: #C9AC7E ;
 }
 .middle img{
     margin-bottom: 15px;
@@ -21,22 +20,22 @@ body{
 .left{
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    /*border-left: 0px;*/
-    /*border-right: 1px solid #3B83A0;*/
-    /*border-top: 1px solid #3B83A0;*/
-    /*border-bottom: 1px solid #3B83A0;*/
+    border-left: 0px;
+    border-right: 1px solid #3B83A0;
+    border-top: 1px solid #3B83A0;
+    border-bottom: 1px solid #3B83A0;
 }
 .right{
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-    /*border-right: 0px;*/
-    /*border-left: 1px solid #3B83A0;*/
-    /*border-top: 1px solid #3B83A0;*/
-    /*border-bottom: 1px solid #3B83A0;*/
+    border-right: 0px;
+    border-left: 1px solid #3B83A0;
+    border-top: 1px solid #3B83A0;
+    border-bottom: 1px solid #3B83A0;
 }
 .middle{
     border-radius: 10px;
-    /*border:  1px solid #3B83A0;*/
+    border:  1px solid #3B83A0;
 }
 .top, .bottom {
     font-size: 50px;
@@ -70,8 +69,8 @@ body{
 .futur{
     margin-top: 25px;
     padding-top: 10px;
-    /*border-top: 1px solid #3B83A0;*/
-    /*border-bottom: 1px solid #3B83A0;*/
+    border-top: 1px solid #3B83A0;
+    border-bottom: 1px solid #3B83A0;
     height: 105px;
     background: #FAFBFB;
 }
