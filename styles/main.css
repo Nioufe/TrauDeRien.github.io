@@ -16,13 +16,11 @@
     background: #3B83A0;
 }
 
-.top {
+.top, .bottom {
     height: 100px;
     background: #FAFBFB;
-
-}
-.bottom {
-    height: 100px;
-    background: #FAFBFB;
+    font-size: 50px;
+    color: #CC685B;
+    padding: 15px;
 
 }
