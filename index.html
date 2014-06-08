@@ -18,13 +18,20 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-4 left">
-
+        <div class="col-md-4">
+            <div class="customContainer left">
+                <h1>
+                    Juke'it <span class="glyphicon glyphicon-music"></span>
+                </h1>
+                <h2>PICSART_NIGHT</h2>
+                <p>Chanson proposée par:</p>
+                <h2>Elisa Gilles</h2>
+            </div>
         </div>
-        <div class="col-md-4 middle">
+        <div class="col-md-4 middle customContainer">
             <div class="row">
                 <div class="filler"></div>
-                <div >
+                <div class="center_cover">
                     <img src="https://api.deezer.com/album/302127/image?size=big">
                 </div>
                 <div class="filler">
@@ -32,8 +39,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 right">
+        <div class="col-md-4">
+            <div class="customContainer right">
 
+            </div>
         </div>
     </div>
     <div class="row futur">
@@ -91,9 +100,11 @@
         $('.container-full').css('height', height);
         $(function() {
             var scroll_text;
-            var $elmt = $(this);
+            var $elmt = $('.titleContainer');
             scroll_text = setInterval(function() {
-                scrollText($elmt);
+                $elmt.each(function(){
+                    scrollText(this);
+                });
             }, 28);
         }, function() {
             clearInterval(scroll_text);
@@ -106,7 +117,7 @@
             var h1 = $(".titleH1", $elmt),
                     width = h1.width(),
                     left = h1.position().left - 1,
-                    titleWidth = $('.titleSpan').width();
+                    titleWidth = $('.titleSpan', $elmt).width();
             if(width<titleWidth){
             left = -left > titleWidth ? width : left;
                 h1.css({
@@ -117,8 +128,6 @@
 
        // $('.filler').css('height', height/4);
         $('.right,.left').css('height', 430);
-
-        $('.futur').css('height',100);
         cast.receiver.logger.setLevelValue(0);
         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
         console.log('Starting Receiver Manager');

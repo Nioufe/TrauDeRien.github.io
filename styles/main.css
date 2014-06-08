@@ -1,5 +1,5 @@
 body{
-    background: #FAFBFB;
+    background: #FFFFFF;
 }
 
 .container-full {
@@ -9,36 +9,68 @@ body{
 
 .middle{
     text-align: center;
-    background: #FAFBFB;
+    background: #C9AC7E ;
 }
-
+.middle img{
+    margin-bottom: 15px;
+}
+.customContainer{
+    background:#FAFBFB ;
+}
 .left{
-    background:#3B83A0 ;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 0px;
+    border-right: 1px solid #3B83A0;
+    border-top: 1px solid #3B83A0;
+    border-bottom: 1px solid #3B83A0;
 }
 .right{
-
-    background: #3B83A0;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border-right: 0px;
+    border-left: 1px solid #3B83A0;
+    border-top: 1px solid #3B83A0;
+    border-bottom: 1px solid #3B83A0;
 }
-
+.middle{
+    border-radius: 10px;
+    border:  1px solid #3B83A0;
+}
 .top, .bottom {
-    height: 100px;
-    background: #FAFBFB;
+    background: #FFFFFF;
     font-size: 50px;
     color: #CC685B;
     padding: 15px;
 
 }
+.top{
+    height: 100px;
+}
+.bottom{
+    height: 95px;
+}
 h1{
     position: relative;
     white-space:nowrap;
     left: 0px;
+    font-size:50px;
+}
+.center_cover{
+    margin-top: 15px;
 }
 .titleContainer{
     float:left;
     margin-right:5px;
     width: 100%;
-    font-size:200%;
     line-height:30px;
     overflow:hidden;
     position: relative;
+}
+.futur{
+    margin-top: 25px;
+    padding-top: 10px;
+    border-top: 1px solid #3B83A0;
+    border-bottom: 1px solid #3B83A0;
+    height: 105px;
 }
