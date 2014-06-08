@@ -2,3 +2,27 @@
     margin: 0 auto;
     overflow: hidden;
 }
+
+.middle{
+    text-align: center;
+    background: #FAFBFB;
+}
+
+.left{
+    background:#3B83A0 ;
+}
+.right{
+
+    background: #3B83A0;
+}
+
+.top {
+    height: 100px;
+    background: #FAFBFB;
+
+}
+.bottom {
+    height: 100px;
+    background: #FAFBFB;
+
+}

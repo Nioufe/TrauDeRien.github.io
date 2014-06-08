@@ -10,14 +10,17 @@
 </head>
 <body>
 <div class="container-full">
+    <div class="row top">
+
+    </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4 left">
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4 middle">
             <div class="row">
                 <div class="filler"></div>
-                <div>
+                <div >
                     <img src="https://api.deezer.com/album/302127/image?size=big">
                 </div>
                 <div class="filler">
@@ -25,9 +28,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4 right">
 
         </div>
+    </div>
+    <div class="row bottom">
+
     </div>
 </div>
 
@@ -35,9 +41,10 @@
 <script type="text/javascript">
     window.onload = function() {
         var height = screen.height;
+        var width = screen.width;
         $('.container-full').css('height', height);
-        $('img').css('height', height/2);
-        $('.filler').css('height', height/4);
+       // $('.filler').css('height', height/4);
+        $('.right,.left').css('height', height-200);
         cast.receiver.logger.setLevelValue(0);
         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
         console.log('Starting Receiver Manager');
