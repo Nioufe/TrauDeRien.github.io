@@ -23,8 +23,32 @@
                 <h1>
                     Juke'it <span class="glyphicon glyphicon-music"></span>
                 </h1>
-                <h2>CODE: PICSART_NIGHT</h2>
-                <p>Chanson proposée par:</p>
+                <p class="titleSmall">Code d'acces</p>
+                <h2>PICSART_NIGHT</h2>
+                <p class="titleSmall"> Juke of Fame (Stats?)</p>
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <p class="titleSmall">Chanson proposee par</p>
                 <h2>Elisa Gilles</h2>
             </div>
         </div>
@@ -44,6 +68,16 @@
                 <h1>
                     Direct Juke <span class="glyphicon glyphicon-comment"></span>
                 </h1>
+                <p class="titleSmall titleMessage">Adrien Trauth</p>
+                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
+                <p class="titleSmall titleMessage">Joris Andrade</p>
+                <p class="directMessage">Bonjour a tous et bienvenue chez nous, on aime les pates, le riz, le chevre et le chorizo</p>
+                <p class="titleSmall titleMessage">Maxime Quentin</p>
+                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
+                <p class="titleSmall titleMessage">Elisa Gilles</p>
+                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
+                <p class="titleSmall titleMessage">Anonymous</p>
+                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
             </div>
         </div>
     </div>
@@ -104,7 +138,7 @@
                 $elmt.each(function(){
                     scrollText(this);
                 });
-            }, 14);
+            }, 28*2);
         }, function() {
             clearInterval(scroll_text);
             $(".titleH1", this).css({
@@ -115,7 +149,7 @@
         var scrollText = function($elmt) {
             var h1 = $(".titleH1", $elmt),
                     width = h1.width(),
-                    left = h1.position().left - 1,
+                    left = h1.position().left - 2,
                     titleWidth = $('.titleSpan', $elmt).width();
             if(width<titleWidth){
             left = -left > titleWidth ? width : left;
@@ -124,9 +158,6 @@
                 });
             }
         };
-
-       // $('.filler').css('height', height/4);
-        $('.right,.left').css('height', 430);
         cast.receiver.logger.setLevelValue(0);
         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
         console.log('Starting Receiver Manager');

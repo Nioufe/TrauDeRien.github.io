@@ -21,6 +21,8 @@ body{
     padding-left: 15px;
     padding-right: 15px;
     color: #3B83A0;
+    height: 430px;
+    overflow: hidden;
 }
 .left h1, .right h1{
     margin-top: 10px;
@@ -30,6 +32,10 @@ body{
     color: #CF907C;
     width: 100%;
     border-bottom: 1px solid;
+}
+.right h1{
+    margin-left: 15px;
+    padding-right: 15px;
 }
 .left{
     border-bottom-right-radius: 10px;
@@ -46,6 +52,7 @@ body{
     border-left: 1px solid #3B83A0;
     border-top: 1px solid #3B83A0;
     border-bottom: 1px solid #3B83A0;
+    text-align: right;
 }
 .middle{
     border-radius: 10px;
@@ -81,6 +88,12 @@ body{
     overflow:hidden;
     position: relative;
 }
+.directMessage{
+    border: 1px solid #CC685B;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
 .futur{
     margin-top: 25px;
     padding-top: 10px;
@@ -88,4 +101,15 @@ body{
     border-bottom: 1px solid #3B83A0;
     height: 105px;
     background: #FAFBFB;
+}
+.titleSmall{
+    color: #C9AC7E ;
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;
+}
+.titleMessage{
+    margin-bottom: 0px;
+}
+.left h2, .left h3{
+    margin-top: 5px;
 }
