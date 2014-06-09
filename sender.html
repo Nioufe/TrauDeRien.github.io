@@ -149,9 +149,16 @@
                 }, onError);
             }
         }
+        function launch(){
+            chrome.cast.requestSession(function(e) {
+                session = e;
+            }, onError);
+        }
+
+        initializeCastApi();
     </script>
 </head>
 <body>
 </body>
-    <p onclick="initializeCastApi()">GO GO GO GO</p>
+    <p onclick="lauch()">GO GO GO GO</p>
 </html>
