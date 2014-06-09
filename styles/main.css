@@ -78,7 +78,12 @@ body{
 .left h2, .left h3{
     margin-top: 5px;
 }
-
+.messageContainer{
+    overflow: hidden;
+}
+.messageWrapper{
+    display: none;
+}
 /* Titres defilants top et bot */
 .top, .bottom {
     font-size: 50px;
@@ -107,14 +112,6 @@ body{
     line-height:30px;
     overflow:hidden;
     position: relative;
-}
-
-.titleSpan {
-    -webkit-animation: cssAnimation 1s 16 ease-in-out;
-}
-@-webkit-keyframes cssAnimation {
-    from { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(720px); }
-    to { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(-720px); }
 }
 
 /* Liste de covers*/

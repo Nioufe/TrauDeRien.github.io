@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -13,7 +14,7 @@
     <div class="row top">
         <div class="col-md-12">
           <div class="titleContainer">
-            <h1 class="titleH1"><span class="titleSpan">Around The World - Daft Punk - Around The World Album</span></h1>
+            <h1 class="titleH1"><span class="titleSpan topTitle"></span></h1>
           </div>
         </div>
     </div>
@@ -49,7 +50,7 @@
                     </div>
                 </div>
                 <p class="titleSmall">Chanson proposee par</p>
-                <h2>Elisa Gilles</h2>
+                <h2 class="propositionner">Elisa Gilles</h2>
             </div>
         </div>
         <div class="col-md-4 middle customContainer">
@@ -68,17 +69,19 @@
                 <h1>
                     Direct Juke <span class="glyphicon glyphicon-comment"></span>
                 </h1>
-                <p class="titleSmall titleMessage">Adrien Trauth</p>
-                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
-                <p class="titleSmall titleMessage">Joris Andrade</p>
-                <p class="directMessage">Bonjour a tous et bienvenue chez nous, on aime les pates, le riz, le chevre et le chorizo</p>
-                <p class="titleSmall titleMessage">Maxime Quentin</p>
-                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
-                <p class="titleSmall titleMessage">Elisa Gilles</p>
-                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
-                <p class="titleSmall titleMessage">Anonymous</p>
-                <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
-            </div>
+                <div class="messageContainer">
+                    <p class="titleSmall titleMessage">Adrien Trauth</p>
+                    <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
+                    <p class="titleSmall titleMessage">Joris Andrade</p>
+                    <p class="directMessage">Bonjour a tous et bienvenue chez nous, on aime les pates, le riz, le chevre et le chorizo</p>
+                    <p class="titleSmall titleMessage">Maxime Quentin</p>
+                    <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
+                    <p class="titleSmall titleMessage">Elisa Gilles</p>
+                    <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
+                    <p class="titleSmall titleMessage">Anonymous</p>
+                    <p class="directMessage">Bonjour a tous et bienvenue chez nous</p>
+                </div>
+             </div>
         </div>
     </div>
     <div class="row futur">
@@ -122,7 +125,7 @@
     <div class="row bottom">
         <div class="col-md-12">
             <div class="titleContainer">
-                <h1 class="titleH1"><span class="titleSpan">Juke'It Best App Ever, So Much Fun, XOXO, Keur Keur, Such Love</span></h1>
+                <h1 class="titleH1"><span class="titleSpan bottomTitle"></span></h1>
             </div>
         </div>
     </div>
@@ -131,92 +134,9 @@
 <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
 <script type="text/javascript">
     window.onload = function() {
-//        $(function() {
-//            var scroll_text;
-//            var $elmt = $('.titleContainer');
-//            scroll_text = setInterval(function() {
-//                $elmt.each(function(){
-//                    scrollText(this);
-//                });
-//            }, 28*2);
-//        }, function() {
-//            clearInterval(scroll_text);
-//            $(".titleH1", this).css({
-//                left: 0
-//            });
-//        });
-//
-//        var scrollText = function($elmt) {
-//            var h1 = $(".titleH1", $elmt),
-//                    width = h1.width(),
-//                    left = h1.position().left - 2,
-//                    titleWidth = $('.titleSpan', $elmt).width();
-//            if(width<titleWidth){
-//            left = -left > titleWidth ? width : left;
-//                h1.css({
-//                    left: left
-//                });
-//            }
-//        };
 
-        var divMessage = ;
-        var authorMessage= ;
-        var contentMessage = ;
-        cast.receiver.logger.setLevelValue(0);
-        window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
-        console.log('Starting Receiver Manager');
 
-        // handler for the 'ready' event
-        castReceiverManager.onReady = function(event) {
-            console.log('Received Ready event: ' + JSON.stringify(event.data));
-            window.castReceiverManager.setApplicationState("Application status is ready...");
-        };
 
-        // handler for 'senderconnected' event
-        castReceiverManager.onSenderConnected = function(event) {
-            console.log('Received Sender Connected event: ' + event.data);
-            console.log(window.castReceiverManager.getSender(event.data).userAgent);
-        };
-
-        // handler for 'senderdisconnected' event
-        castReceiverManager.onSenderDisconnected = function(event) {
-            console.log('Received Sender Disconnected event: ' + event.data);
-            if (window.castReceiverManager.getSenders().length == 0) {
-                window.close();
-            }
-        };
-
-        // handler for 'systemvolumechanged' event
-        castReceiverManager.onSystemVolumeChanged = function(event) {
-            console.log('Received System Volume Changed event: ' + event.data['level'] + ' ' +
-                    event.data['muted']);
-        };
-
-        // create a CastMessageBus to handle messages for a custom namespace
-        window.messageBus =
-                window.castReceiverManager.getCastMessageBus(
-                        'urn:x-cast:com.google.cast.sample.helloworld');
-
-        // handler for the CastMessageBus message event
-        window.messageBus.onMessage = function(event) {
-            console.log('Message [' + event.senderId + ']: ' + event.data);
-            // display the message from the sender
-            displayText(event.data);
-            // inform all senders on the CastMessageBus of the incoming message event
-            // sender message listener will be invoked
-            window.messageBus.send(event.senderId, event.data);
-        }
-
-        // initialize the CastReceiverManager with an application status message
-        window.castReceiverManager.start({statusText: "Application is starting"});
-        console.log('Receiver Manager started');
-    };
-
-    // utility function to display the text message in the input field
-    function displayText(text) {
-        console.log(text);
-       $("#message").html(text);
-        window.castReceiverManager.setApplicationState(text);
     };
 </script>
 </body>

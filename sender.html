@@ -149,52 +149,9 @@
                 }, onError);
             }
         }
-
-        /**
-         * append message to debug message window
-         * @param {string} message A message string
-         */
-        function appendMessage(message) {
-            console.log(message);
-            var dw = document.getElementById("debugmessage");
-            dw.innerHTML += '\n' + JSON.stringify(message);
-        };
-
-        /**
-         * utility function to handle text typed in by user in the input field
-         */
-        function update() {
-            sendMessage(document.getElementById("input").value);
-        }
-
-        /**
-         * handler for the transcribed text from the speech input
-         * @param {string} words A transcibed speech string
-         */
-        function transcribe(words) {
-            sendMessage(words);
-        }
     </script>
 </head>
 <body>
-<table id="wrapper">
-    <tr>
-        <td>
-            <form method="get" action="JavaScript:update();">
-                <input id="input" class="border" type="text" size="30" onwebkitspeechchange="transcribe(this.value)" x-webkit-speech/>
-            </form>
-        </td>
-    </tr>
-</table>
-
-<!-- Debbugging output -->
-<div style="margin:10px; visibility:hidden;">
-    <textarea rows="20" cols="70" id="debugmessage">
-    </textarea>
-</div>
-
-<script type="text/javascript">
-    document.getElementById("input").focus();
-</script>
 </body>
+    <p onclick="initializeCastApi()"></p>
 </html>
