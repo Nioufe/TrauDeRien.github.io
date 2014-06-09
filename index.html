@@ -131,33 +131,37 @@
 <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
 <script type="text/javascript">
     window.onload = function() {
-        $(function() {
-            var scroll_text;
-            var $elmt = $('.titleContainer');
-            scroll_text = setInterval(function() {
-                $elmt.each(function(){
-                    scrollText(this);
-                });
-            }, 28*2);
-        }, function() {
-            clearInterval(scroll_text);
-            $(".titleH1", this).css({
-                left: 0
-            });
-        });
+//        $(function() {
+//            var scroll_text;
+//            var $elmt = $('.titleContainer');
+//            scroll_text = setInterval(function() {
+//                $elmt.each(function(){
+//                    scrollText(this);
+//                });
+//            }, 28*2);
+//        }, function() {
+//            clearInterval(scroll_text);
+//            $(".titleH1", this).css({
+//                left: 0
+//            });
+//        });
+//
+//        var scrollText = function($elmt) {
+//            var h1 = $(".titleH1", $elmt),
+//                    width = h1.width(),
+//                    left = h1.position().left - 2,
+//                    titleWidth = $('.titleSpan', $elmt).width();
+//            if(width<titleWidth){
+//            left = -left > titleWidth ? width : left;
+//                h1.css({
+//                    left: left
+//                });
+//            }
+//        };
 
-        var scrollText = function($elmt) {
-            var h1 = $(".titleH1", $elmt),
-                    width = h1.width(),
-                    left = h1.position().left - 2,
-                    titleWidth = $('.titleSpan', $elmt).width();
-            if(width<titleWidth){
-            left = -left > titleWidth ? width : left;
-                h1.css({
-                    left: left
-                });
-            }
-        };
+        var divMessage = ;
+        var authorMessage= ;
+        var contentMessage = ;
         cast.receiver.logger.setLevelValue(0);
         window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
         console.log('Starting Receiver Manager');

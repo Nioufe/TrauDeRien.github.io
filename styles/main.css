@@ -7,35 +7,29 @@ body{
     overflow: hidden;
     height: 720px;
 }
-
+.customContainer{
+    background:#FAFBFB ;
+}
+/* MILIEU */
 .middle{
     text-align: center;
+    height: 430px;
+    border-radius: 10px;
+    border:  1px solid #3B83A0;
 }
 .middle img{
     margin-bottom: 15px;
 }
-.customContainer{
-    background:#FAFBFB ;
+.center_cover{
+    margin-top: 15px;
 }
+/*Cotes */
 .left, .right{
     padding-left: 15px;
     padding-right: 15px;
     color: #3B83A0;
     height: 430px;
     overflow: hidden;
-}
-.left h1, .right h1{
-    margin-top: 10px;
-    margin-left: -15px;
-    margin-right: -15px;
-    padding-left: 15px;
-    color: #CF907C;
-    width: 100%;
-    border-bottom: 1px solid;
-}
-.right h1{
-    margin-left: 15px;
-    padding-right: 15px;
 }
 .left{
     border-bottom-right-radius: 10px;
@@ -54,10 +48,38 @@ body{
     border-bottom: 1px solid #3B83A0;
     text-align: right;
 }
-.middle{
-    border-radius: 10px;
-    border:  1px solid #3B83A0;
+.left h1, .right h1{
+    margin-top: 10px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    color: #CF907C;
+    width: 100%;
+    border-bottom: 1px solid;
 }
+.right h1{
+    margin-left: 15px;
+    padding-right: 15px;
+}
+.directMessage{
+    border: 1px solid #CC685B;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+.titleSmall{
+    color: #C9AC7E ;
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;
+}
+.titleMessage{
+    margin-bottom: 0px;
+}
+.left h2, .left h3{
+    margin-top: 5px;
+}
+
+/* Titres defilants top et bot */
 .top, .bottom {
     font-size: 50px;
     color: #CC685B;
@@ -70,15 +92,13 @@ body{
 .bottom{
     height: 90px;
 }
+
 .titleH1{
     position: relative;
     white-space:nowrap;
     left: 0px;
     font-size:50px;
     margin-top: 10px;
-}
-.center_cover{
-    margin-top: 15px;
 }
 .titleContainer{
     float:left;
@@ -88,12 +108,16 @@ body{
     overflow:hidden;
     position: relative;
 }
-.directMessage{
-    border: 1px solid #CC685B;
-    border-radius: 5px;
-    padding: 10px;
-    
+
+.titleSpan {
+    -webkit-animation: cssAnimation 1s 16 ease-in-out;
 }
+@-webkit-keyframes cssAnimation {
+    from { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(720px); }
+    to { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(-720px); }
+}
+
+/* Liste de covers*/
 .futur{
     margin-top: 25px;
     padding-top: 10px;
@@ -101,15 +125,4 @@ body{
     border-bottom: 1px solid #3B83A0;
     height: 105px;
     background: #FAFBFB;
-}
-.titleSmall{
-    color: #C9AC7E ;
-    font-size: 20px;
-    margin: 5px 0px 5px 0px;
-}
-.titleMessage{
-    margin-bottom: 0px;
-}
-.left h2, .left h3{
-    margin-top: 5px;
 }
