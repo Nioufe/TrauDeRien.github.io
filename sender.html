@@ -39,8 +39,12 @@
         /**
          * Call initialization for Cast
          */
-        if (!chrome.cast || !chrome.cast.isAvailable) {
-            setTimeout(initializeCastApi, 1000);
+        window['__onGCastApiAvailable'] = function(loaded, errorInfo) {
+            if (loaded) {
+                initializeCastApi();
+            } else {
+                console.log(errorInfo);
+            }
         }
 
         /**
@@ -154,8 +158,6 @@
                 session = e;
             }, onError);
         }
-
-        initializeCastApi();
     </script>
 </head>
 <body>
