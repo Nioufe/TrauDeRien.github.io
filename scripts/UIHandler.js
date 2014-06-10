@@ -109,7 +109,6 @@ var Proposition = {
     }
   },
   updateUI : function(){
-    console.log(propositionsDivs);
     var index;
     if(Proposition.propositions.length <= 12){
       for (index in Proposition.propositions) {
