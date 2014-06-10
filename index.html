@@ -25,7 +25,7 @@
                     Juke'it <span class="glyphicon glyphicon-music"></span>
                 </h1>
                 <p class="titleSmall">Code d'acces</p>
-                <h2>PICSART_NIGHT</h2>
+                <h2 class="eventTitle">PICSART_NIGHT</h2>
                 <p class="titleSmall"> Juke of Fame (Stats?)</p>
                 <div class="row">
                     <div class="col-md-4">
@@ -132,10 +132,22 @@
 </div>
 
 <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+<script type="text/javascript" src="scripts/chromecastHandler.js"></script>
+<script type="text/javascript" src="scripts/UIHandler.js"></script>
 <script type="text/javascript">
     window.onload = function() {
-
-
+        Event.init('PICSART_XOXO');
+        setInterval(function(){
+            Proposition.updateUI();
+        }, 5000);
+        Song.start({
+            title: 'ET TA SOEUR',
+            artist: 'Jeune Poli',
+            album: 'Poème de notre Temps',
+            cover: 'https://api.deezer.com/album/6801478/image'},
+            'Parce que je le vaut bien tellement on est fort chez Juke\'It',
+            'Adrien Chromecast'
+        );
 
     };
 </script>
