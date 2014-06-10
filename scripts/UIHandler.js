@@ -93,12 +93,7 @@ var Proposition = {
     'https://api.deezer.com/album/302127/image',
     'https://api.deezer.com/album/7079247/image',
     'https://api.deezer.com/album/7079247/image',
-    'https://api.deezer.com/album/7079247/image',
-    'https://api.deezer.com/album/984006/image',
-    'https://api.deezer.com/album/984006/image',
-    'https://api.deezer.com/album/984006/image',
-    'https://api.deezer.com/album/6801478/image',
-    'https://api.deezer.com/album/6801478/image'
+    'https://api.deezer.com/album/7079247/image'
   ],
   init : function(propositions){
     Proposition.propositions = propositions;
@@ -119,6 +114,12 @@ var Proposition = {
     if(Proposition.propositions.length <= 12){
       for (index in Proposition.propositions) {
         $(propositionsDivs[index]).attr('src', Proposition.propositions[index]);
+      }
+      if(Proposition.propositions.length<12){
+        index = Proposition.propositions.length -1;
+        for(index; index<12; index++){
+          $(propositionnerDiv[index]).attr('src', '');
+        }
       }
     } else {
       Proposition.propositions = shuffle(Proposition.propositions);

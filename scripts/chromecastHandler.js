@@ -28,7 +28,7 @@ castReceiverManager.onSenderDisconnected = function(event) {
 // create a CastMessageBus to handle messages for a custom namespace
 window.messageBus =
   window.castReceiverManager.getCastMessageBus(
-    'urn:x-cast:com.google.cast.sample.helloworld');
+    'urn:x-cast:com.jukeit.cast.tv');
 
 // handler for the CastMessageBus message event
 window.messageBus.onMessage = function(event) {
