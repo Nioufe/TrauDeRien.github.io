@@ -33,6 +33,20 @@ window.messageBus =
 // handler for the CastMessageBus message event
 window.messageBus.onMessage = function(event) {
   console.log('Message [' + event.senderId + ']: ' + event.data);
+  var message = JSON.parse(event.data);
+  if(message.type === 'START_CHROMECAST'){
+    //init event
+    Event.init(content.eventName);
+    Proposition.init(content.propositions);
+  } else if(message.type == 'ADD_PROPOSAL'){
+    // new proposal
+    Proposition.update(content)
+  } else if(message.type == 'READ_SONG'){
+    Song.start(message.song, message.message, message.propositionner);
+  } else if(message.type =='ADD_MESSAGE'){
+    //message
+    addMessage(content.author, content.message);
+  }
 }
 
 // initialize the CastReceiverManager with an application status message
