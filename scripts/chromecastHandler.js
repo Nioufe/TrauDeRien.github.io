@@ -38,14 +38,20 @@ window.messageBus.onMessage = function(event) {
     //init event
     Event.init(message.content.name);
     Proposition.init(message.content.propositions);
+    if(typeof message.content.messagesList !== 'undefined' && message.content.messagesList!==null){
+      var messagesList =  message.content.messagesList;
+      for(index in messagesList){
+        addMessage(messagesList[index].login, messagesList[index].content);
+      }
+    }
     Proposition.updateUI();
   } else if(message.type == 'ADD_PROPOSAL'){
     // new proposal
     Proposition.update(message.content)
   } else if(message.type == 'READ_SONG'){
-    Song.start(message.song, message.message, message.propositionner);
+    Song.start(message.song, message.message, message.author);
+    Proposition.remove(message.song);
   } else if(message.type =='ADD_MESSAGE'){
-    //message
     addMessage(message.author, message.message);
   }
 }

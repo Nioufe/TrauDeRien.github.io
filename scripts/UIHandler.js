@@ -85,36 +85,29 @@ function shuffle(array) {
   return array;
 }
 var Proposition = {
-  propositions: [
-    'https://api.deezer.com/album/302127/image',
-    'https://api.deezer.com/album/302127/image',
-    'https://api.deezer.com/album/302127/image',
-    'https://api.deezer.com/album/302127/image',
-    'https://api.deezer.com/album/302127/image',
-    'https://api.deezer.com/album/7079247/image',
-    'https://api.deezer.com/album/7079247/image',
-    'https://api.deezer.com/album/7079247/image'
-  ],
+  propositions: [],
   init : function(propositions){
     for(index in propositions){
-      Proposition.propositions.push(propositions[index].song.album.cover);
+      // on stock les chansons
+      Proposition.propositions.push(propositions[index]);
     }
   },
   update : function(proposition){
-    Proposition.propositions.push(proposition);
+    Proposition.propositions.push(proposition.song);
   },
   remove : function(proposition) {
     for(var index in Proposition.propositions){
-      if(Proposition.propositions[index] === proposition){
+      if(Proposition.propositions[index].id === proposition.id){
         Proposition.propositions.splice(index, 1);
       }
     }
   },
   updateUI : function(){
+    console.log(Proposition.propositions);
     var index;
     if(Proposition.propositions.length <= 12){
       for (index in Proposition.propositions) {
-        $(propositionsDivs[index]).attr('src', Proposition.propositions[index]);
+        $(propositionsDivs[index]).attr('src', Proposition.propositions[index].album.cover);
       }
       if(Proposition.propositions.length<12){
         index = Proposition.propositions.length -1;
@@ -125,7 +118,7 @@ var Proposition = {
     } else {
       Proposition.propositions = shuffle(Proposition.propositions);
       for(index = 0; index<12; index++){
-        $(propositionsDivs[index]).attr('src', Proposition.propositions[index]);
+        $(propositionsDivs[index]).attr('src', Proposition.propositions[index].album.cover);
       }
     }
   }
