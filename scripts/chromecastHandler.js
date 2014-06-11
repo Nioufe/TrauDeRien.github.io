@@ -52,7 +52,7 @@ window.messageBus.onMessage = function(event) {
     Song.start(message.song, message.message, message.author);
     Proposition.remove(message.song);
   } else if(message.type =='ADD_MESSAGE'){
-    addMessage(message.author, message.message);
+    addMessage(message.author, message.content);
   }
 }
 

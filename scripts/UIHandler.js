@@ -93,7 +93,7 @@ var Proposition = {
     }
   },
   update : function(proposition){
-    Proposition.propositions.push(proposition.song);
+    Proposition.propositions.push(proposition);
   },
   remove : function(proposition) {
     for(var index in Proposition.propositions){
