@@ -37,9 +37,9 @@ window.messageBus.onMessage = function(event) {
   if(message.type === 'START_CHROMECAST'){
     //init event
     Event.init(message.content.name);
-    Proposition.init(message.content.propositions);
-    if(typeof message.content.messagesList !== 'undefined' && message.content.messagesList!==null){
-      var messagesList =  message.content.messagesList;
+    Proposition.init(message.propositions);
+    if(typeof message.content.messages !== 'undefined' && message.content.messages!==null){
+      var messagesList =  message.content.messages;
       for(index in messagesList){
         addMessage(messagesList[index].login, messagesList[index].content);
       }
