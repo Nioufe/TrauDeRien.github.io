@@ -96,7 +96,9 @@ var Proposition = {
     'https://api.deezer.com/album/7079247/image'
   ],
   init : function(propositions){
-    Proposition.propositions = propositions;
+    for(index in propositions){
+      Proposition.propositions.push(propositions[index].song.album.cover);
+    }
   },
   update : function(proposition){
     Proposition.propositions.push(proposition);
@@ -112,7 +114,7 @@ var Proposition = {
     var index;
     if(Proposition.propositions.length <= 12){
       for (index in Proposition.propositions) {
-        $(propositionsDivs[index]).attr('src', Proposition.propositions[index].song.album.cover);
+        $(propositionsDivs[index]).attr('src', Proposition.propositions[index]);
       }
       if(Proposition.propositions.length<12){
         index = Proposition.propositions.length -1;
@@ -123,7 +125,7 @@ var Proposition = {
     } else {
       Proposition.propositions = shuffle(Proposition.propositions);
       for(index = 0; index<12; index++){
-        $(propositionsDivs[index]).attr('src', Proposition.propositions[index].song.album.cover);
+        $(propositionsDivs[index]).attr('src', Proposition.propositions[index]);
       }
     }
   }
