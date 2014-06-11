@@ -41,12 +41,12 @@ window.messageBus.onMessage = function(event) {
     Proposition.updateUI();
   } else if(message.type == 'ADD_PROPOSAL'){
     // new proposal
-    Proposition.update(content)
+    Proposition.update(message.content)
   } else if(message.type == 'READ_SONG'){
     Song.start(message.song, message.message, message.propositionner);
   } else if(message.type =='ADD_MESSAGE'){
     //message
-    addMessage(content.author, content.message);
+    addMessage(message.author, message.message);
   }
 }
 
