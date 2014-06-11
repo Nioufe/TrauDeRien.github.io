@@ -36,8 +36,9 @@ window.messageBus.onMessage = function(event) {
   var message = JSON.parse(event.data);
   if(message.type === 'START_CHROMECAST'){
     //init event
-    Event.init(content.eventName);
-    Proposition.init(content.propositions);
+    Event.init(message.content.name);
+    Proposition.init(message.content.propositions);
+    Proposition.updateUI();
   } else if(message.type == 'ADD_PROPOSAL'){
     // new proposal
     Proposition.update(content)

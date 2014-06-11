@@ -112,7 +112,7 @@ var Proposition = {
     var index;
     if(Proposition.propositions.length <= 12){
       for (index in Proposition.propositions) {
-        $(propositionsDivs[index]).attr('src', Proposition.propositions[index]);
+        $(propositionsDivs[index]).attr('src', Proposition.propositions[index].song.album.cover);
       }
       if(Proposition.propositions.length<12){
         index = Proposition.propositions.length -1;
@@ -123,7 +123,7 @@ var Proposition = {
     } else {
       Proposition.propositions = shuffle(Proposition.propositions);
       for(index = 0; index<12; index++){
-        $(propositionsDivs[index]).attr('src', Proposition.propositions[index]);
+        $(propositionsDivs[index]).attr('src', Proposition.propositions[index].song.album.cover);
       }
     }
   }
