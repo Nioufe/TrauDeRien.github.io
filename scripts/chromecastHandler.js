@@ -41,16 +41,18 @@ window.messageBus.onMessage = function(event) {
     if(typeof message.content.messages !== 'undefined' && message.content.messages!==null){
       var messagesList =  message.content.messages;
       for(index in messagesList){
-        addMessage(messagesList[index].login, messagesList[index].content);
+        addMessage(messagesList[index].author, messagesList[index].content);
       }
     }
     Proposition.updateUI();
   } else if(message.type == 'ADD_PROPOSAL'){
     // new proposal
-    Proposition.update(message.content)
+    Proposition.update(message.content);
+    Proposition.updateUI();
   } else if(message.type == 'READ_SONG'){
     Song.start(message.song, message.message, message.author);
     Proposition.remove(message.song);
+    Proposition.updateUI();
   } else if(message.type =='ADD_MESSAGE'){
     addMessage(message.author, message.content);
   }
