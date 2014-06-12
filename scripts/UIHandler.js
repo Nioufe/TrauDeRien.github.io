@@ -60,10 +60,10 @@ var Song = {
       middleImg.attr('src', url + '?size=big');
     },
     start: function(song, message, propositionner){
-      Song.top(song.title, song.artist, song.album);
+      Song.top(song.title, song.artist.name, song.album.title);
       Song.bot(message);
       Song.propose(propositionner);
-      Song.cover(song.cover);
+      Song.cover(song.album.cover);
     }};
 function shuffle(array) {
   var counter = array.length, temp, index;
