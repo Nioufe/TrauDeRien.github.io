@@ -115,7 +115,7 @@ var Proposition = {
       if(Proposition.propositions.length<12){
         index = Proposition.propositions.length -1;
         for(index; index<12; index++){
-          $(propositionnerDiv[index]).attr('src', '');
+          $(propositionnerDiv[index]).removeAttr('src');
         }
       }
     } else {
