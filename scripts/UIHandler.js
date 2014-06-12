@@ -43,6 +43,10 @@ function scrollTitle(){
       h1.css({
         left: left
       });
+    } else {
+      h1.css({
+        left: 0
+      });
     }
   };
 };
