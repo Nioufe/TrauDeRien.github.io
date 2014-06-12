@@ -89,11 +89,11 @@ var Proposition = {
   init : function(propositions){
     for(index in propositions){
       // on stock les chansons
-      Proposition.propositions.push(propositions[index]);
+      Proposition.propositions.push(propositions[index].song);
     }
   },
   update : function(proposition){
-    Proposition.propositions.push(proposition);
+    Proposition.propositions.push(proposition.deezerSong);
   },
   remove : function(proposition) {
     for(var index in Proposition.propositions){
