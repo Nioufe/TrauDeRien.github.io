@@ -99,15 +99,14 @@ var Proposition = {
   update : function(proposition){
     Proposition.propositions.push(proposition);
   },
-  remove : function(proposition) {
+  remove : function(idSong) {
     for(var index in Proposition.propositions){
-      if(Proposition.propositions[index].id === proposition.id){
+      if(Proposition.propositions[index].id === idSong){
         Proposition.propositions.splice(index, 1);
       }
     }
   },
   updateUI : function(){
-    console.log(Proposition.propositions);
     var index;
     if(Proposition.propositions.length <= 12){
       for (index in Proposition.propositions) {
