@@ -49,7 +49,6 @@ window.messageBus.onMessage = function(event) {
     Proposition.updateUI();
   } else if(message.type == 'READ_SONG'){
     Song.start(message.song, message.message, message.author);
-    Proposition.remove(message.song.id);
     Proposition.updateUI();
   } else if(message.type =='ADD_MESSAGE'){
     addMessage(message.author, message.content);

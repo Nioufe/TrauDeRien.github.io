@@ -51,6 +51,7 @@ function scrollTitle(){
   };
 };
 var Song = {
+    current: {},
     top: function topTitle(title, artist, album){
         topTitleElement.text(title + ' - ' + artist + ' - ' +  album);
       },
@@ -64,6 +65,7 @@ var Song = {
       middleImg.attr('src', url + '?size=big');
     },
     start: function(song, message, propositionner){
+      Song.current = song;
       Song.top(song.title, song.artist.name, song.album.title);
       Song.bot(message);
       Song.propose(propositionner);
@@ -97,17 +99,21 @@ var Proposition = {
     }
   },
   update : function(proposition){
-    Proposition.propositions.push(proposition);
-  },
-  remove : function(idSong) {
-    for(var index in Proposition.propositions){
-      if(Proposition.propositions[index].id === idSong){
-        Proposition.propositions.splice(index, 1);
+    for (index in Proposition.propositions) {
+      if(proposition.id === Proposition.propositions[index].id){
+        return;
       }
     }
+    Proposition.propositions.push(proposition);
   },
   updateUI : function(){
     var index;
+    //retrait de la chanson courante de la liste
+    for (index in Proposition.propositions) {
+      if(Song.current.id === Proposition.propositions[index].id){
+        Proposition.propositions.splice(index, 1);
+      }
+    }
     if(Proposition.propositions.length <= 12){
       for (index in Proposition.propositions) {
         $(propositionsDivs[index]).attr('src', Proposition.propositions[index].album.cover);
