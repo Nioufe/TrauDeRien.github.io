@@ -119,9 +119,9 @@ var Proposition = {
         $(propositionsDivs[index]).attr('src', Proposition.propositions[index].album.cover);
       }
       if(Proposition.propositions.length<12){
-        index = Proposition.propositions.length -1;
+        index = Proposition.propositions.length;
         for(index; index<12; index++){
-          $(propositionnerDiv[index]).attr('src', '#');
+          $(propositionsDivs[index]).attr('src', '');
         }
       }
     } else {
