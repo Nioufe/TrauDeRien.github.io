@@ -21,6 +21,7 @@
             $('.su_panel').height($(window).height());
             $('.su_center').height($(window).height());
             UIPanels.loadTweets();
+            setInterval(UIPanels.loadTweets, 10000);
             Graph.init();
         });
     </script>
