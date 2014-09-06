@@ -57,4 +57,3 @@ window.messageBus.onMessage = function(event) {
 
 // initialize the CastReceiverManager with an application status message
 window.castReceiverManager.start({statusText: "Application is starting"});
-console.log('Receiver Manager started');
